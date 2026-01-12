@@ -19,15 +19,12 @@ export default function Header({ fileName }) {
                     Versions
                 </a>
                 <button
-                    id="toggleButton"
-                    className={`nav__button nav__button--toggle toggle-button ${isEditMode ? 'active' : ''}`}
+                    className="toggle-button"
                     type="button"
-                    aria-label="Toggle Edit Mode"
                     onClick={toggleEditMode}
-                    disabled>
-
-                    <span className="content__button-half left-half button-half">{isEditMode ? 'Read' : 'Edit'}</span>
-                    <span className="content__button-half right-half button-half active">{isEditMode ? 'Edit' : 'Read'}</span>
+                >
+                    <span className={`button-half left-half ${!isEditMode ? 'active' : ''}`}>Read</span>
+                    <span className={`button-half right-half ${isEditMode ? 'active' : ''}`}>Edit</span>
                 </button>
             </nav>
         </section>

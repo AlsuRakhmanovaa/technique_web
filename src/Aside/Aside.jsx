@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Aside.scss'
+import Login from '../Log_in.jsx';
 
 export default function Aside() {
     const [isLoginPanelVisible, setLoginPanelVisible] = useState(false);
@@ -28,11 +29,11 @@ export default function Aside() {
                     </li>
                 </ul>
                 {isLoginPanelVisible && (
-                    <div className="sidebar__login-panel" id="loginPanel">
-                        <a className="sidebar__login-button login-button" href="log-in.html" aria-label="Log in">Log in</a>
+                    <div className="sidebar__login-panel" id="loginPanel"> 
+                        <a className="sidebar__login-button login-button" aria-label="Log in">Log in</a>
                         <a className="sidebar__logout-button logout-button" aria-label="Log out">Log out</a>
                     </div>
-                )};
+                )}
             </nav>
         </aside>
     );

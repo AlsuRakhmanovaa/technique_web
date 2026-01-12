@@ -19,7 +19,7 @@ function AllFiles({setFileName}) {
         console.error('Error:', error);
       }
     };
-    setFileName("/")
+    setFileName("Theme") //"/"
     fetchData();
   }, []);
 

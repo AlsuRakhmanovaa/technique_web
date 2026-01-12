@@ -96,31 +96,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.3s ease;
+        color: white;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
     }
 
-    .left-half {
-        background-color: #00515D;
-        color: white;
+    .left-half {    
         left: 0;
     }
 
     .right-half {
-        background-color: transparent;
-        color: white;
         left: 50%;
-        border-right: 1px solid #79747E;
+        border-left: 1px solid #79747E;
     }
 
-    &.active {
-        .right-half {
-            transform: translateX(0);
-            background-color: #00515D;
-        }
-
-        .left-half {
-            transform: translateX(0);
-            background-color: transparent;
-        }
+    .button-half.active {
+        background-color: #00515D;
     }
 }
