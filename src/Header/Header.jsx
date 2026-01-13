@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import Editor from '../Editor';
 import './Header.scss'
 
 export default function Header({ fileName }) {
     const [isEditMode, setEditMode] = useState(false);
 
-    // const toggleEditMode = () => {
-    //     setEditMode(!isEditMode);
-    //     console.log("Вы нажали на кнопку ");
-    // };
+    const handleReadClick = () => setEditMode(false);
+    const handleEditClick = () => setEditMode(true);
+
+    const handleEditorClose = () => setEditMode(false);
 
     return (
         <section className="content__header">
@@ -19,15 +20,18 @@ export default function Header({ fileName }) {
                 <a className="content__link content__link--versions" aria-label="Versions" disabled>
                     Versions
                 </a>
-                <button
-                    className="toggle-button"
-                    type="button"
-                    // onClick={toggleEditMode}
-                >
-                    <span className={`button-half left-half ${!isEditMode ? 'active' : ''}`} onClick={() => {if (isEditMode) setEditMode(false)}}>Read</span>
-                    <span className={`button-half right-half ${isEditMode ? 'active' : ''}`} onClick={() => {if (!isEditMode) {setEditMode(true); console.log("Вы нажали на кнопку")}}}>Edit</span>
-                </button>
+                <div>
+                    <button
+                        className="toggle-button"
+                        type="button"
+                    >
+                        <span className={`button-half left-half ${!isEditMode ? 'active' : ''}`} onClick={handleReadClick}>Read</span>
+                        <span className={`button-half right-half ${isEditMode ? 'active' : ''}`} onClick={handleEditClick}>Edit</span>
+                    </button>
+                </div>
             </nav>
+
+            {isEditMode && <Editor handleClose={handleEditorClose} />}
         </section>
     );
 };
