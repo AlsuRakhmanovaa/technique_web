@@ -4,9 +4,10 @@ import './Header.scss'
 export default function Header({ fileName }) {
     const [isEditMode, setEditMode] = useState(false);
 
-    const toggleEditMode = () => {
-        setEditMode(!isEditMode);
-    };
+    // const toggleEditMode = () => {
+    //     setEditMode(!isEditMode);
+    //     console.log("Вы нажали на кнопку ");
+    // };
 
     return (
         <section className="content__header">
@@ -21,10 +22,10 @@ export default function Header({ fileName }) {
                 <button
                     className="toggle-button"
                     type="button"
-                    onClick={toggleEditMode}
+                    // onClick={toggleEditMode}
                 >
-                    <span className={`button-half left-half ${!isEditMode ? 'active' : ''}`}>Read</span>
-                    <span className={`button-half right-half ${isEditMode ? 'active' : ''}`}>Edit</span>
+                    <span className={`button-half left-half ${!isEditMode ? 'active' : ''}`} onClick={() => {if (isEditMode) setEditMode(false)}}>Read</span>
+                    <span className={`button-half right-half ${isEditMode ? 'active' : ''}`} onClick={() => {if (!isEditMode) {setEditMode(true); console.log("Вы нажали на кнопку")}}}>Edit</span>
                 </button>
             </nav>
         </section>
