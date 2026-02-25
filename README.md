@@ -1,10 +1,10 @@
-# Wiki (база знаний)
+# Wiki notes
 
-Функционал: 
-- 
+A project for storing wiki notes with the ability to format text (md) and use hyperlinks. There is a reading and editing mode (in development).
 
-Использовались:
-- библиотека React;
-- 
 
-*Является pet-project-ом.*
+In project are used: 
+- React library;
+- useState, useEffect hooks;
+- REST API;
+- SCSS preprocessor.
